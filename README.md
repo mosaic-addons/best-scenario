@@ -1,3 +1,5 @@
-# Berlin Sumo Traffic (BeST) Scenario (Comming Soon)
+# Berlin Sumo Traffic (BeST) Scenario (Coming Soon)
 
-This repository will be filled **soon** with a SUMO scenario covering 24h of vehicle traffic in Berlin.
+This repository will be filled **soon**[^1] with a MOSAIC-compatible SUMO scenario covering 24h of vehicle traffic in Berlin.
+
+[^1]: Expected August/September 2022.
