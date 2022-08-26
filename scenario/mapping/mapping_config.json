@@ -1,0 +1,11 @@
+{
+	"prototypes":[
+		{
+            "name":"DefaultVehicle",
+            "weight": 0.01,
+            "applications":[
+                "org.eclipse.mosaic.app.tutorial.eventprocessing.sampling.HelloWorldApp"
+            ]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+    "simulation": {
+        "id": "BeST-MOSAIC",
+        "duration": "24h",
+        "randomSeed": 268965854,
+        "projection": {
+            "centerCoordinates": {
+                "latitude": 52.525192,
+                "longitude": 13.422281
+            },
+            "cartesianOffset": {
+                "x": -369461.94,
+                "y": -5798955.14
+            }
+        },
+        "network": {
+           "netMask": "255.0.0.0",
+           "vehicleNet": "10.0.0.0",
+           "rsuNet": "11.0.0.0",
+           "tlNet": "12.0.0.0",
+           "csNet": "13.0.0.0",
+           "serverNet": "14.0.0.0",
+           "tmcNet": "15.0.0.0"
+        }
+    },
+    "federates": {
+        "application": true,
+        "sumo": true
+    }
+}
