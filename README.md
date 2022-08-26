@@ -1,6 +1,6 @@
 # Berlin Sumo Traffic (BeST) Scenario
 
-![](docs/img/best-mov.mp4)
+https://user-images.githubusercontent.com/2386865/186914163-1225cb32-7a1f-4bdd-8550-2be9ce9a96dd.mp4
 
 ## 24 Hours of Traffic in Berlin for SUMO and Eclipse MOSAIC
 
@@ -20,7 +20,7 @@ More details on our creation process can be found in the provided reference and 
 
 Some basic characteristics describing the scenario:
 
-|||
+|Characterstic|Number|
 |-----------------|--------|
 | Number of nodes | 27 404 |
 | Number of edges	| 69 234 |
@@ -89,5 +89,4 @@ sumo -c /path/to/repository/scenario/sumo/best-scenario.sumocfg
 
 ## Background
 
-Find out more about the creation process of the scenario by reading our publication once it has been published.
-
+Find out more about the creation process of the scenario by reading our publication once it has been published in the Conference Proceeedings of [CSUM 2022](https://csum.civ.uth.gr).
