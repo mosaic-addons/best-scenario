@@ -53,22 +53,28 @@ The usage of this scenario has to be attributed by either providing a link to th
 1. Install Eclipse MOSAIC, e.g. by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
 2. Install Eclipse SUMO, e.g. from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
-4. Execute the `download_best_scenario.py` * script in `/path/to/repository/scenario/sumo` using [Python](https://www.python.org/downloads).\
-   Alternatively, you can download the SUMO scenario from https://www.dcaiti.tu-berlin.de/research/simulation/downloads/ and unzip it into the `sumo` directory.
+   ```sh
+   git clone git@github.com:mosaic-addons/best-scenario.git
+   ```
+4. Execute the `download_best_scenario.py`[^1] script in `/path/to/repository/scenario/sumo` using [Python](https://www.python.org/downloads).
+   ```sh
+   cd /path/to/repository/scenario/sumo
+   py download_best_scenario.py
+   ```
 5. Go to the installation directory of **Eclipse MOSAIC** and type:
    ```sh
    ./mosaic.bat -c /path/to/repository/scenario/scenario_config.json -w 120
    ```
-6. Grab a coffee, make a meal, develop your mobility application... this could take some hours to complete.
+6. Be aware that completing this scenario requires several hours to complete. You can, however, reduce the simulation duration in the `scenario_config.json`.
 
-> *) This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `true`.
+[^1]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `true`.
 
 In order to see a visualization of the traffic, simply edit the file `etc/runtime.json` in the Eclipse MOSAIC main directory.
 Replace `SumoAmbassador` with `SumoGuiAmbassador` and save the file. 
 Then execute the scenario.
 Please note that using the visualization in `sumo-gui` slows down the simulation significantly due to its immense size.
 
-```json
+```
 ...
   {
     "id": "sumo",
