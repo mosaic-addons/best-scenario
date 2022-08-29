@@ -56,7 +56,7 @@ The usage of this scenario has to be attributed by either providing a link to th
    ```sh
    git clone git@github.com:mosaic-addons/best-scenario.git
    ```
-4. Execute the `download_best_scenario.py`[^1] script in `/path/to/repository/scenario/sumo` using [Python](https://www.python.org/downloads).
+4. Execute the `download_best_scenario.py`[^1] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
    ```sh
    cd /path/to/repository/scenario/sumo
    py download_best_scenario.py
@@ -67,7 +67,7 @@ The usage of this scenario has to be attributed by either providing a link to th
    ```
 6. Be aware that completing this scenario requires several hours to complete. You can, however, reduce the simulation duration in the `scenario_config.json`.
 
-[^1]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `true`.
+[^1]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `True`.
 
 In order to see a visualization of the traffic, simply edit the file `etc/runtime.json` in the Eclipse MOSAIC main directory.
 Replace `SumoAmbassador` with `SumoGuiAmbassador` and save the file. 
