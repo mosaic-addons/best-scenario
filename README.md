@@ -52,13 +52,13 @@ The usage of this scenario has to be attributed by either providing a link to th
 
 ## Installation and Usage
 
-1. Install **Eclipse MOSAIC 22.0**, e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
-2. Install **Eclipse SUMO 1.14.0**, e.g., from https://sumo.dlr.de/docs/Downloads.php
+1. Install **Eclipse MOSAIC 22.0** [^2], e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
+2. Install **Eclipse SUMO 1.14.0** [^2], e.g., from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
    ```sh
    git clone https://github.com/mosaic-addons/best-scenario.git
    ```
-4. Execute the `download_best_scenario.py`[^2] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
+4. To download the SUMO files for the scenario (~470 MB), execute the `download_best_scenario.py`[^3] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
    ```sh
    cd /path/to/repository/scenario/sumo
    py download_best_scenario.py
@@ -70,7 +70,8 @@ The usage of this scenario has to be attributed by either providing a link to th
    ```
 6. Be aware that completing this scenario requires several hours to complete. You can, however, reduce the simulation duration in the `scenario_config.json`.
 
-[^2]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `True`. Details about tracking on that site can be found at https://www.dcaiti.tu-berlin.de/contact/imprint
+[^2]: We calibrated and tested the BeST scenario using the mentioned versions of SUMO and MOSAIC. The scenario may still work with newer versions, but we cannot guarantee that the same results will be created.
+[^3]: The download executed by this script will be counted for statistical purposes on www.dcaiti.tu-berlin.de. To disable recording the download, you can set the field `record` in the `download_best_scenario.py` to `False`. Details about tracking on that site can be found at https://www.dcaiti.tu-berlin.de/contact/imprint
 
 In order to see a visualization of the traffic, simply edit the file `etc/runtime.json` in the Eclipse MOSAIC main directory.
 Replace `SumoAmbassador` with `SumoGuiAmbassador` and save the file. 
@@ -94,6 +95,56 @@ The scenario can also be used with SUMO only. Once you installed the scenario, y
 ```sh
 cd sumo
 sumo -c /path/to/repository/scenario/sumo/best-scenario.sumocfg
+```
+
+## The MOSAIC scenario
+
+This scenario is compatible with Eclipse MOSAIC. It is prepared to extends the traffic simulation in SUMO with communication and application simulation. 
+You can easily enable and disable simulators in the bottom section of the `scenario_config.json`. Currently, only `sumo` and `application` is activated.
+
+```json
+"federates": {
+    "application": true,
+    "cell": false,
+    "sumo": true,
+    "sns": false
+}
+```
+
+In the `mapping/mapping_config.json` you will find that 1% of all vehicles are equipped with a [`HelloWorldApp`](https://github.com/eclipse/mosaic/blob/main/app/tutorials/example-applications/src/main/java/org/eclipse/mosaic/app/tutorial/eventprocessing/sampling/HelloWorldApp.java), which simply prints out the type of the vehicle in every simulation step. 
+You can map our other [Example Applications](https://www.eclipse.org/mosaic/tutorials/additional_examples/), or [develop your own applications](https://www.eclipse.org/mosaic/docs/develop_applications/) and map them onto a proportion of all vehicles.
+
+```json
+{
+  "prototypes":[
+    {
+      "name":"DefaultVehicle",
+      "weight": 0.01,
+      "applications":[ "org.eclipse.mosaic.app.tutorial.eventprocessing.sampling.HelloWorldApp" ]
+    }
+  ]
+}
+```
+
+Furthermore, if you want to add communication between vehicles/their applications to the scenario, you can either activate `sns` for adhoc-communication, or `cell` for cell-based communication. Configuration files for both simulators, where you can configure delay times, paket loss, and other communication properties, can be found in `sns/sns_config.json` and `cell/network.json` files. To enable communication in applications, you furthermore need to activate the communication module accordingly in your application, and use it to send V2X messages. For more details on that, follow our [tutorials](https://www.eclipse.org/mosaic/tutorials).
+
+Following an example for an application, which sends a Cooperative Awareness Message (CAM) via adhoc communication to its neighboring vehicles:
+```java
+public void onStartup() {
+  getAdhocModule().enable();
+}
+
+public void onVehicleUpdated() {
+  getAdhocModule().sendCam();
+}
+
+public void onMessageReceived(ReceivedV2xMessage msg) {
+  if (msg.getMessage() instanceof Cam) {
+    String senderId = msg.getMessage().getRouting().getSource().getSourceName();
+    GeoPoint otherPos = ((Cam)msg.getMessage()).getPosition();
+    // todo
+  }
+}
 ```
 
 ## Background
