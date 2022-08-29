@@ -50,8 +50,8 @@ The usage of this scenario has to be attributed by either providing a link to th
 
 ## Installation and Usage
 
-1. Install Eclipse MOSAIC, e.g. by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
-2. Install Eclipse SUMO, e.g. from https://sumo.dlr.de/docs/Downloads.php
+1. Install **Eclipse MOSAIC 22.0**, e.g. by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
+2. Install **Eclipse SUMO 1.14.0**, e.g. from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
 4. Execute the `download_best_scenario.py` * script in `/path/to/repository/scenario/sumo` using [Python](https://www.python.org/downloads).\
    Alternatively, you can download the SUMO scenario from https://www.dcaiti.tu-berlin.de/research/simulation/downloads/ and unzip it into the `sumo` directory.
