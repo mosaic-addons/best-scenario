@@ -12,9 +12,11 @@ It is, however, also possible to run it with [Eclipse SUMO](https://github.com/e
 If you plan to test your own mobility solutions encoperating V2X technology or message exchange via LTE/5G, then Eclipse MOSAIC is your way to go. 
 Here you can combine the traffic with communcation and application simulation, thus creating a holistic system solution on a large-scale.
 
-The scenario is based on the [MATSim Open Berlin Scenario](https://github.com/matsim-scenarios/matsim-berlin). 
+The scenario is based on the [MATSim Open Berlin Scenario](https://github.com/matsim-scenarios/matsim-berlin) [^1]. 
 We extracted traffic demand from this scenario and re-calibrated all routes to achieve a user equilibrium.
 More details on our creation process can be found in the provided reference and in the background section and the bottom of this file.
+
+[^1]: D. Ziemke, I. Kaddoura, K. Nagel; [The MATSim Open Berlin Scenario: A multimodal agent-based transport simulation scenario based on synthetic demand modeling and Open Data](https://doi.org/10.1016/j.procs.2019.04.120); Procedia Computer Science, Volume 151, 2019, 870-877
 
 ## Characteristics
 
@@ -50,24 +52,25 @@ The usage of this scenario has to be attributed by either providing a link to th
 
 ## Installation and Usage
 
-1. Install **Eclipse MOSAIC 22.0**, e.g. by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
-2. Install **Eclipse SUMO 1.14.0**, e.g. from https://sumo.dlr.de/docs/Downloads.php
+1. Install **Eclipse MOSAIC 22.0**, e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
+2. Install **Eclipse SUMO 1.14.0**, e.g., from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
    ```sh
-   git clone git@github.com:mosaic-addons/best-scenario.git
+   git clone https://github.com/mosaic-addons/best-scenario.git
    ```
-4. Execute the `download_best_scenario.py`[^1] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
+4. Execute the `download_best_scenario.py`[^2] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
    ```sh
    cd /path/to/repository/scenario/sumo
    py download_best_scenario.py
    ```
 5. Go to the installation directory of **Eclipse MOSAIC** and type:
    ```sh
-   ./mosaic.bat -c /path/to/repository/scenario/scenario_config.json -w 120
+   mosaic.bat -c /path/to/repository/scenario/scenario_config.json -w 120 # Windows
+   ./mosaic.sh -c /path/to/repository/scenario/scenario_config.json -w 120 # Linux
    ```
 6. Be aware that completing this scenario requires several hours to complete. You can, however, reduce the simulation duration in the `scenario_config.json`.
 
-[^1]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `True`. Details about tracking on that site can be found at https://www.dcaiti.tu-berlin.de/contact/imprint
+[^2]: This download script will generate a tracking record for each download of the best-scenario from www.dcaiti.tu-berlin.de. To disable tracking, you can set the field `do_not_track` in the `download_best_scenario.py` to `True`. Details about tracking on that site can be found at https://www.dcaiti.tu-berlin.de/contact/imprint
 
 In order to see a visualization of the traffic, simply edit the file `etc/runtime.json` in the Eclipse MOSAIC main directory.
 Replace `SumoAmbassador` with `SumoGuiAmbassador` and save the file. 
