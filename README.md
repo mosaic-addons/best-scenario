@@ -58,7 +58,7 @@ The usage of this scenario has to be attributed by either providing a link to th
    ```sh
    git clone https://github.com/mosaic-addons/best-scenario.git
    ```
-4. To download the SUMO files for the scenario (~470 MB), execute the `download_best_scenario.py`[^3] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
+4. To download the SUMO files for the scenario (~420 MB), execute the `download_best_scenario.py`[^3] script in `/path/to/repository/scenario/sumo` using [Python 3](https://www.python.org/downloads).
    ```sh
    cd /path/to/repository/scenario/sumo
    py download_best_scenario.py
@@ -130,20 +130,25 @@ Furthermore, if you want to add communication between vehicles/their application
 
 Following an example for an application, which sends a Cooperative Awareness Message (CAM) via adhoc communication to its neighboring vehicles:
 ```java
-public void onStartup() {
-  getAdhocModule().enable();
-}
+public class V2xApp
+   extends AbstractApplication<VehicleOperatingSystem>
+   implements CommunicationApplication, VehicleApplication {
 
-public void onVehicleUpdated() {
-  getAdhocModule().sendCam();
-}
+   public void onStartup() {
+     getAdhocModule().enable();
+   }
 
-public void onMessageReceived(ReceivedV2xMessage msg) {
-  if (msg.getMessage() instanceof Cam) {
-    String senderId = msg.getMessage().getRouting().getSource().getSourceName();
-    GeoPoint otherPos = ((Cam)msg.getMessage()).getPosition();
-    // todo
-  }
+   public void onVehicleUpdated() {
+     getAdhocModule().sendCam();
+   }
+
+   public void onMessageReceived(ReceivedV2xMessage msg) {
+     if (msg.getMessage() instanceof Cam) {
+       String senderId = msg.getMessage().getRouting().getSource().getSourceName();
+       GeoPoint otherPos = ((Cam)msg.getMessage()).getPosition();
+       // todo
+     }
+   }
 }
 ```
 
