@@ -53,7 +53,7 @@ The usage of this scenario has to be attributed by either providing a link to th
 ## Installation and Usage
 
 1. Install **Eclipse MOSAIC 22.0** [^2], e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
-2. Install **Eclipse SUMO 1.14.0** [^2], e.g., from https://sumo.dlr.de/docs/Downloads.php
+2. Install **Eclipse SUMO 1.11.0** [^2], e.g., from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
    ```sh
    git clone https://github.com/mosaic-addons/best-scenario.git
