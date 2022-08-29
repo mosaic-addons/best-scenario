@@ -2,8 +2,8 @@ import os
 import urllib.request
 import zipfile
 
-# Set to True if no tracking record (anonymized) should be generated on www.dcaiti.tu-berlin.de.
-do_not_track = True 
+# Set to False if no download statistics should be recorded on www.dcaiti.tu-berlin.de.
+record = True 
 
 download_url = 'https://www.dcaiti.tu-berlin.de/research/simulation/downloads/get/best-scenario-v1.zip'
 
@@ -15,10 +15,10 @@ else:
         print('Downloading BeST scenario ... {}%'.format(int(progress)), end='\r');
 
     print('Downloading BeST scenario ...', end='\r')
-    if do_not_track:
-        urllib.request.urlretrieve(download_url, filename='best-scenario.zip', reporthook=report_progress)
-    else:
+    if record:
         urllib.request.urlretrieve(download_url + '?record=true', filename='best-scenario.zip', reporthook=report_progress)
+    else:
+        urllib.request.urlretrieve(download_url, filename='best-scenario.zip', reporthook=report_progress)
     print('Unzipping ...')
     with zipfile.ZipFile('best-scenario.zip', 'r') as best_zip:
         best_zip.extractall()

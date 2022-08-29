@@ -23,8 +23,11 @@
            "tmcNet": "15.0.0.0"
         }
     },
-    "federates": {
-        "application": true,
-        "sumo": true
-    }
+"federates": {
+    "application": true,
+    "cell": false,
+    "sns": false,
+    "sumo": true,    
+    "output": false
+}
 }
