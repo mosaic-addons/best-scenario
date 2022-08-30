@@ -93,7 +93,6 @@ Please note that using the visualization in `sumo-gui` slows down the simulation
 The scenario can also be used with SUMO only. Once you installed the scenario, you can execute it with SUMO directly:
 
 ```sh
-cd sumo
 sumo -c /path/to/repository/scenario/sumo/best-scenario.sumocfg
 ```
 
