@@ -5,7 +5,7 @@ https://user-images.githubusercontent.com/2386865/186914163-1225cb32-7a1f-4bdd-8
 ## 24 Hours of Traffic in Berlin for SUMO and Eclipse MOSAIC
 
 This simulation scenario provides **motorized private transport** traffic for over **24 hours for the whole city of Berlin**. 
-With over **2,25 million trips** within an area of 800 km², this is **the largest microscopic traffic simulation scenario** we are currently aware of.
+With about **2,25 million trips** within an area of 800 km², this is **the largest microscopic traffic simulation scenario** we are currently aware of.
 
 The scenario was made for [Eclipse MOSAIC](https://github.com/eclipse/mosaic) and thus requires it to run. 
 It is, however, also possible to run it with [Eclipse SUMO](https://github.com/eclipse/sumo) only.
@@ -22,17 +22,17 @@ More details on our creation process can be found in the provided reference and 
 
 Some basic characteristics describing the scenario:
 
-|Characterstic|Number|
+|Characteristic|Number|
 |-----------------|--------|
 | Number of nodes | 27 404 |
 | Number of edges	| 69 234 |
 | Number of junctions controlled by traffic signals | 2 249 |
 | Number of trips | 2 248 952 |
-| Average duration of each trip | 805 sec |
+| Average duration of each trip | 805 s |
 | Average distance of each trip | 7,9 km |
-| Overall mean speed compared to speed limits | 0.71 |
+| Overall mean speed compared to speed limits | 0,71 |
 | Total number of teleports | 2 786 |
-| Simulation duration on 3,4 GHz CPU (no GUI) | 7 hours |
+| Simulation duration on 3,4 GHz CPU (no GUI) | 7 h |
 
 We furthermore compared the simulated counts on some certain streets against real data from [Digitale Plattform Berlin](https://api.viz.berlin.de/daten/verkehrsdetektion):
 
@@ -103,14 +103,15 @@ You can easily enable and disable simulators in the bottom section of the `scena
 
 ```json
 "federates": {
-    "application": true,
-    "cell": false,
-    "sumo": true,
-    "sns": false
+     "application": true,
+     "cell": false,
+     "sns": false,
+     "sumo": true,    
+     "output": false
 }
 ```
 
-In the `mapping/mapping_config.json` you will find that 1% of all vehicles are equipped with a [`HelloWorldApp`](https://github.com/eclipse/mosaic/blob/main/app/tutorials/example-applications/src/main/java/org/eclipse/mosaic/app/tutorial/eventprocessing/sampling/HelloWorldApp.java), which simply prints out the type of the vehicle in every simulation step. 
+In the `mapping/mapping_config.json`, you will find that 1% of all vehicles are equipped with a [`HelloWorldApp`](https://github.com/eclipse/mosaic/blob/main/app/tutorials/example-applications/src/main/java/org/eclipse/mosaic/app/tutorial/eventprocessing/sampling/HelloWorldApp.java), which simply prints out the type of the vehicle in every simulation step. 
 You can map our other [Example Applications](https://www.eclipse.org/mosaic/tutorials/additional_examples/), or [develop your own applications](https://www.eclipse.org/mosaic/docs/develop_applications/) and map them onto a proportion of all vehicles.
 
 ```json
