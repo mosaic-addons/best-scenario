@@ -93,7 +93,7 @@ Please note that using the visualization in `sumo-gui` slows down the simulation
 The scenario can also be used with SUMO only. Once you installed the scenario, you can execute it with SUMO directly:
 
 ```sh
-sumo -c /path/to/repository/scenario/sumo/best-scenario.sumocfg
+sumo -c /path/to/repository/scenario/sumo/berlin.sumocfg
 ```
 
 ## The MOSAIC scenario
@@ -153,4 +153,4 @@ public class V2xApp
 
 ## Background
 
-Find out more about the creation process of the scenario by reading our publication once it has been published in the Conference Proceeedings of [CSUM 2022](https://csum.civ.uth.gr).
+Find out more about the creation process of the scenario by reading our publication once it has been published in the Conference Proceeedings of [CSUM 2022](https://csum.civ.uth.gr). Unfortunately, we cannot tell when this will happen.
