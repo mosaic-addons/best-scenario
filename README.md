@@ -2,6 +2,15 @@
 
 https://user-images.githubusercontent.com/2386865/186914163-1225cb32-7a1f-4bdd-8550-2be9ce9a96dd.mp4
 
+## License and Attribution
+
+All files belonging to this scenario definition are licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>.
+
+The usage of this scenario has to be attributed by either providing a link to this repository, or by citing this reference:
+
+> Schrab, K., Protzmann, R., Radusch, I. (2023). *A Large-Scale Traffic Scenario of Berlin for Evaluating Smart Mobility Applications*. In: Nathanail, E.G., Gavanas, N., Adamos, G. (eds) Smart Energy for Smart Transport. CSUM 2022. Lecture Notes in Intelligent Transportation and Infrastructure. Springer, Cham. https://doi.org/10.1007/978-3-031-23721-8_24
+> 
 ## 24 Hours of Traffic in Berlin for SUMO and Eclipse MOSAIC
 
 This simulation scenario provides **motorized private transport** traffic for over **24 hours for the whole city of Berlin**. 
@@ -41,14 +50,6 @@ We furthermore compared the simulated counts on some certain streets against rea
 ![Vehicle counts on A100 Siemensdamm East direction](docs/img/counts-siemensdamm-east.svg)
 ![Vehicle counts on Treskowallee South direction](docs/img/counts-treskowallee-south.svg)
 
-## License and Attribution
-
-All files belonging to this scenario definition are licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>.
-
-The usage of this scenario has to be attributed by either providing a link to this repository, or by citing this reference:
-
-> K. Schrab, R. Protzmann, and I. Radusch, "*A Large-Scale Traffic Scenario of Berlin for Evaluating Smart Mobility Applications*" in Proceedings of 6th Conference on Sustainable Urban Mobility, 2022.
 
 ## Installation and Usage
 
@@ -151,7 +152,3 @@ public class V2xApp
    }
 }
 ```
-
-## Background
-
-Find out more about the creation process of the scenario by reading our publication once it has been published in the Conference Proceeedings of [CSUM 2022](https://csum.civ.uth.gr). Unfortunately, we cannot tell when this will happen.
