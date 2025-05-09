@@ -27,20 +27,28 @@ More details on our creation process can be found in the provided reference and 
 
 [^1]: D. Ziemke, I. Kaddoura, K. Nagel; [The MATSim Open Berlin Scenario: A multimodal agent-based transport simulation scenario based on synthetic demand modeling and Open Data](https://doi.org/10.1016/j.procs.2019.04.120); Procedia Computer Science, Volume 151, 2019, 870-877
 
+As an additional effort, the scenario was extended with bus traffic based on real GTFS feeds. 97\% of all bus lines in Berlin 
+have been mapped to the network. The bus trips have been set up to match real bus schedules. More information on the integration
+of bus traffic can be read in the following publication.
+
+> Schweppenhäuser M., Großmann T., Schrab K., Protzmann, R., Radusch, I. (2025). *Modeling Bus Traffic for the Berlin SUMO Traffic Scenario*. SUMO User Conference 2025. https://sumo.dlr.de/pdf/2025/pre-print-2613.pdf
+
 ## Characteristics
 
 Some basic characteristics describing the scenario:
 
 |Characteristic|Number|
 |-----------------|--------|
-| Number of nodes | 27 404 |
-| Number of edges	| 69 234 |
+| Number of nodes | 28 547 |
+| Number of edges	| 71 651 |
 | Number of junctions controlled by traffic signals | 2 249 |
-| Number of trips | 2 248 952 |
-| Average duration of each trip | 805 s |
+| Number of bus stops | 6 246 |
+| Number of car trips | 2 246 917 |
+| Number of bus trips | 25 724 |
+| Average duration of each trip | 817 s |
 | Average distance of each trip | 7,9 km |
 | Overall mean speed compared to speed limits | 0,71 |
-| Total number of teleports | 2 786 |
+| Total number of teleports | 2 332 |
 | Simulation duration on 3,4 GHz CPU (no GUI) | 7 h |
 
 We furthermore compared the simulated counts on some certain streets against real data from [Digitale Plattform Berlin](https://api.viz.berlin.de/daten/verkehrsdetektion):
@@ -53,8 +61,8 @@ We furthermore compared the simulated counts on some certain streets against rea
 
 ## Installation and Usage
 
-1. Install **Eclipse MOSAIC 22.0** [^2], e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
-2. Install **Eclipse SUMO 1.11.0** [^2], e.g., from https://sumo.dlr.de/docs/Downloads.php
+1. Install **Eclipse MOSAIC 25.0** [^2], e.g., by following [this manual](https://www.eclipse.org/mosaic/docs/getting_started)
+2. Install **Eclipse SUMO 1.22.0** [^2], e.g., from https://sumo.dlr.de/docs/Downloads.php
 3. Clone this repository to an arbitrary folder.
    ```sh
    git clone https://github.com/mosaic-addons/best-scenario.git

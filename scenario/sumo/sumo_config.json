@@ -1,5 +1,5 @@
 {
-    "sumoConfigurationFile": "berlin.sumocfg",
+    "sumoConfigurationFile": "berlin_bus.sumocfg",
     "updateInterval": "1s",
     "additionalSumoParameters": "--time-to-teleport 120 --ignore-junction-blocker 20 --time-to-teleport.highways 0",
     "subscribeToAllVehicles": false,
