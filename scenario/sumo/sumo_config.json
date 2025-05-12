@@ -1,7 +1,7 @@
 {
     "sumoConfigurationFile": "berlin.sumocfg",
     "updateInterval": "1s",
-    "additionalSumoParameters": "--time-to-teleport 120 --ignore-junction-blocker 20 --time-to-teleport.highways 0",
+    "additionalSumoParameters": "",
     "subscribeToAllVehicles": false,
     "subscriptions": [ "roadposition" ]
 }

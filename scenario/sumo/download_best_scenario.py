@@ -5,7 +5,7 @@ import zipfile
 # Set to False if no download statistics should be recorded on www.dcaiti.tu-berlin.de.
 record = True 
 
-download_url = 'https://www.dcaiti.tu-berlin.de/research/simulation/downloads/get/best-scenario-v1.zip'
+download_url = 'https://www.dcaiti.tu-berlin.de/research/simulation/downloads/get/best-scenario-v2.zip'
 
 if os.path.exists('berlin.sumocfg'):
     print('BeST scenario already exists, skipping')
