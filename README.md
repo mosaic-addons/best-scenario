@@ -27,7 +27,7 @@ More details on our creation process can be found in the provided reference and 
 
 [^1]: D. Ziemke, I. Kaddoura, K. Nagel; [The MATSim Open Berlin Scenario: A multimodal agent-based transport simulation scenario based on synthetic demand modeling and Open Data](https://doi.org/10.1016/j.procs.2019.04.120); Procedia Computer Science, Volume 151, 2019, 870-877
 
-As an additional effort, the scenario was extended with bus traffic based on real GTFS feeds. 97\% of all bus lines in Berlin 
+As an additional effort, the scenario was extended with bus traffic based on real GTFS feeds. 89\% of all bus lines in Berlin 
 have been mapped to the network. The bus trips have been set up to match real bus schedules. More information on the integration
 of bus traffic can be read in the following publication.
 
